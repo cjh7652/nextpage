@@ -15,13 +15,15 @@ export default async function List() {
       <div className="notice-bg">
              <h4>Notice</h4>
             <table>
-                <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>날짜</th>
-                    <th>수정</th>
-                    <th>삭제</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>날짜</th>
+                        <th>수정</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
                
             </table>
             <table>

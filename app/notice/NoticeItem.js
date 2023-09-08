@@ -1,4 +1,4 @@
-'use client'
+'use client' //검색 노출 이점이 없음 여기엔 db를 직접 조작하는것은 사용할수 없음
 
 import Link from "next/link"
 
@@ -17,7 +17,7 @@ export default function NoticeItem({result}){
             {
                 result.map((a, i) =>{
                     return(
-                        <tr  className="Notice-item" key={i}>
+                        <tr  className="notice-item" key={i}>
                             <td>{i+1}</td>
                             <td> <Link prefetch={false} href={'/notice_detail/'+result[i]._id.toString()}>{result[i].title} </Link></td>
                             <td>{formattedDate}</td>
@@ -31,9 +31,11 @@ export default function NoticeItem({result}){
                                     })
                                     .then((result)=>{ 
                                         //성공시 실행할코드
-                                        e.target.parentElement.style.opacity=0;
+                                        const rowElement = e.target.closest("tr");
+                                        rowElement.style.opacity=0;
                                         setTimeout(()=>{
-                                            e.target.parentElement.style.display='none';
+                                            const rowElement = e.target.closest("tr");
+                                            rowElement.style.display='none';
                                         },1000)
                                     })
                                     }}>  <button>삭제</button></span>

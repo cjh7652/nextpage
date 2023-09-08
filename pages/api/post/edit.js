@@ -1,7 +1,7 @@
 import { connectDB } from "@/util/database.js"
 import { ObjectId } from "mongodb";
 
-export default async function handler(req, rsc){
+export default async function handler(req, res){
     if(req.method == 'POST'){
       /*   console.log(요청.body)  확인하고 싶으면 밑에 내용 주석후 확인 */
         let rebody={
@@ -15,6 +15,6 @@ export default async function handler(req, rsc){
           );
           console.log(result)
       
-          rsc.redirect(302, '/notice')
+          res.redirect(302, '/notice')
     }
 }

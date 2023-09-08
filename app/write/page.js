@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = () => {
+const page = (props) => {
     
     return (
         <div className='write-wrap'>
@@ -8,7 +8,7 @@ const page = () => {
             <form action="/api/post/new" method="POST">
                 <input type="text" name="title" placeholder='글제목' />
                 <textarea name="content" placeholder='글내용' />
-                <input style={{display :'none'}}name="_id" defaultValue={result._id.toString()}/>
+               {/*  <input style={{display :'none'}}name="_id" defaultValue={props.result._id.toString()}/> */}
                 <button>버튼</button>
             </form>
         </div>
